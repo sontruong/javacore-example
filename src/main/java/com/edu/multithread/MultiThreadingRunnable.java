@@ -1,4 +1,4 @@
-package com.edu.heap_stack;
+package com.edu.multithread;
 
 public class MultiThreadingRunnable implements Runnable {
 	public static void main(String[] args) {
