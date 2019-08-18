@@ -3,4 +3,10 @@
   <groupId>com.edu</groupId>
   <artifactId>javacore</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+       <java.version>1.10</java.version>
+       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   </properties>
+  
 </project>
