@@ -28,7 +28,6 @@ public class ZipUtils {
 				// Reading data using readLine
 				String commandLine = reader.readLine();
 				// Printing the read line
-				System.out.println(commandLine);
 				if (null == commandLine || "".equalsIgnoreCase(commandLine)) {
 					return;
 				}
@@ -37,34 +36,35 @@ public class ZipUtils {
 					return;
 				}
 				String command = commands[0];
-				String option = commands[1];
+				String options = "";
 				if (commands.length > 1) {
 					for (int i = 1; i < commands.length; i ++) {
-						option += commands[i];
+						options += commands[i] + " ";
 					}
-					option = option.substring(0, option.length()-1);
+					options = options.substring(0, options.length()-1);
 				}
+				System.out.println("command: " + command);
 				switch (command) {
 				case "exit":
 					exist = true;
 					System.out.println("Application will stop now. See you later\n");
 					break;
 				case "zip":
-					if (FileUtils.checkFileExist(option)) {
-						zipFile(option, option);
-					} else if (FileUtils.checkFolderExist(option)) {
-						zipFolder(option, option);
+					if (FileUtils.checkFileExist(options)) {
+						zipFile(options, options);
+					} else if (FileUtils.checkFolderExist(options)) {
+						zipFolder(options, options);
 					} else {
 						System.out.println("File was not found");
 					}
 					break;
 				case "unzip":
-					if (FileUtils.checkFileExist(option)) {
+					if (FileUtils.checkFileExist(options)) {
 //						zipFile(option, option);
 					} else {
 						System.out.println("File was not found");
 					}
-					System.out.println(option);
+					System.out.println("unzip: " + options);
 					break;
 				default:
 					break;
